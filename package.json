@@ -5,11 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Add Wallaby Extension to VS Code and run there\" && exit 1",
-    "start": "parcel ExampleApp.html",
-    "build": "parcel build src/index.js ",
-    "setup": "npm install",
-    "example": "cd example && parcel ExampleApp.html",
-    "prepublish": "npm run build"
+    "start": "parcel ExampleApp.html --no-cache",
+    "setup": "npm install"
   },
   "repository": {
     "type": "git",
@@ -30,16 +27,17 @@
   },
   "homepage": "https://github.com/martinjackson/simple-widgets#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "parcel-bundler": "^1.9.7"
+    "parcel-bundler": "^1.10.2"
   },
   "dependencies": {
-    "@types/react": "^16.4.13",
-    "react": "^16.4.2",
+    "@types/react": "^16.4.16",
+    "react": "^16.5.2",
     "react-autobind": "^1.0.6",
-    "react-dom": "^16.4.2",
-    "simple-widgets": "^1.0.3"
+    "react-dom": "^16.5.2",
+    "simple-widgets": "^1.1.1"
   }
 }
