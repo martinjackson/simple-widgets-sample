@@ -2,12 +2,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';    // Not needed by simple-widgets, but used in this example
 
-// {CheckBox, Choice, Radio, DatePicker, makeChangeHandler} from 'simple-widgets';
-
-import simpleWidgets from 'simple-widgets';
-
-const {CheckBox, Choice, Radio, DatePicker, makeChangeHandler} = simpleWidgets
-
+import {CheckBox, Choice, Radio, DatePicker, makeChangeHandler} from 'simple-widgets';
 
 class App extends Component {
 
@@ -15,9 +10,14 @@ class App extends Component {
         super(props);
         autoBind(this);
     
-        console.log(simpleWidgets, makeChangeHandler);
-        
-        this.state = {'name': '', 'ex2_mode': '', 'preview':'', 'funny': '', 'year':'', 'date_of_install': '1963-04-04'};
+        this.state = {
+          'name': '', 
+          'ex2_mode': '', 
+          'preview':'', 
+          'funny': '', 
+          'year':'', 
+          'date_of_install': '1963-04-04'
+        };
         this.modes = ["java", "javascript", "jsx", "markdown", "bash"];  
         this.handleChange = makeChangeHandler(this);   
     }
