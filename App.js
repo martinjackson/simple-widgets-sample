@@ -2,11 +2,12 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';    // Not needed by simple-widgets, but used in this example
 
+// {CheckBox, Choice, Radio, DatePicker, makeChangeHandler} from 'simple-widgets';
+
 import simpleWidgets from 'simple-widgets';
 
-// {CheckBox, Choice, Radio, DatePicker, makeChangeHandler} from 'simple-widgets';
 const {CheckBox, Choice, Radio, DatePicker, makeChangeHandler} = simpleWidgets
-// import DatePicker from './DatePicker';
+
 
 class App extends Component {
 
@@ -34,9 +35,11 @@ class App extends Component {
         <CheckBox id="cb1" selectedValue="Preview" text="Preview" name="preview" value={this.state.preview} onChange={this.handleChange} />
         <CheckBox id="cb2" selectedValue="Help"    text="Help"    name="preview" value={this.state.preview} onChange={this.handleChange} />
         <CheckBox id="cb3" selectedValue="Funny"   text="Funny"   name="funny"   value={this.state.funny}   onChange={this.handleChange} color="green" />
+        <CheckBox id="cb4" selectedValue="NotFunny" text="NotFunny" name="funny" value={this.state.funny}   onChange={this.handleChange} color="red" disabled />
 
-        <Radio id="rd1" selectedValue="1" name="year" value={this.state.year} onChange={this.handleChange} />Year 1
-        <Radio id="rd2" selectedValue="2" name="year" value={this.state.year} onChange={this.handleChange} />Year 2
+        <Radio id="rd1" selectedValue="1" name="year" text="Year 1" value={this.state.year} onChange={this.handleChange} />
+        <Radio id="rd2" selectedValue="2" name="year" text="Year 2" value={this.state.year} onChange={this.handleChange} />
+        <Radio id="rd3" selectedValue="3" name="year" text="Year 3" value={this.state.year} onChange={this.handleChange} disabled />
 
         <br />
         <label>Date Of Installation: </label><DatePicker name="date_of_install" value={this.state.date_of_install} onChange={this.handleChange} format='YYYY-MM-DD'/><br />
