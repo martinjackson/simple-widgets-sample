@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';    // Not needed by simple-widgets, but used in this example
 
-import {CheckBox, Choice, Radio, DatePicker, DoubleListBox, makeChangeHandler} from 'simple-widgets';
+import {CheckBox, Choice, ChoiceText, Radio, DatePicker, DoubleListBox, makeChangeHandler} from 'simple-widgets';
 
 const lang = ["java", "javascript", "jsx", "markdown", "bash"];
 
@@ -18,6 +18,7 @@ class App extends Component {
         this.state = {
           'name': '',
           'ex2': '',
+          'tx2': '',
           'preview':'',
           'funny': '',
           'year':'',
@@ -34,8 +35,13 @@ class App extends Component {
         <h1>A title</h1>
 
         <label>Name:</label> <input name="name" value={this.state.name} onChange={this.handleChange} /> <br/>
+
+        <label>Language of Choice:</label>
+        <ChoiceText id="ct1" choices={this.lang_c} list="tx2" name="tx2" value={this.state.tx2} onChange={this.handleChange} /> <br/>
+
         <label>Language of Choice:</label>
         <Choice id="ch1" choices={this.lang_c} name="ex2" value={this.state.ex2} onChange={this.handleChange} />
+
 
         <CheckBox id="cb1" selectedValue="Preview" text="Preview" name="preview" value={this.state.preview} onChange={this.handleChange} />
         <CheckBox id="cb2" selectedValue="Help"    text="Help"    name="preview" value={this.state.preview} onChange={this.handleChange} />
@@ -65,6 +71,7 @@ class App extends Component {
 
         name: <span>{this.state.name}</span> <br />
         ex2: <span id="answer1">{this.state.ex2}</span> <br />
+        tx2: <span id="answer1a">{this.state.tx2}</span> <br />
         preview: <span id="answer2">{this.state.preview}</span> <br />
         funny: <span id="answer3">{this.state.funny}</span> <br />
         year: <span id="answer4">{this.state.year}</span> <br />
