@@ -33,11 +33,14 @@
     "babel-preset-react": "^6.24.1",
     "parcel-bundler": "^1.12.3"
   },
+  "testdependencies": {
+    "simple-widgets": "file:../simple-widgets"
+  },
   "dependencies": {
     "@types/react": "^16.8.18",
     "react": "^16.8.6",
     "react-autobind": "^1.0.6",
     "react-dom": "^16.8.6",
-    "simple-widgets": "file:../simple-widgets"
+    "simple-widgets": "^1.3.1"
   }
 }
